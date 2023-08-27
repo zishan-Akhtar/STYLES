@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        main{
+            position: relative;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        ul {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            padding: 1rem;
+        }
+
+        li {
+            color: white;
+        }
+
+        #tital {
+            text-align: center;
+            border-bottom: 2px solid white;
+            border-top: 2px solid white;
+            margin: 1rem;
+            color: white;
+        }
+    </style>
+    <title>DOM Projects</title>
+    <style>
+        .card{
+           width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: steelblue;
+        } 
+       
+        .display{
+            width:300px;
+            height:500px;
+             position: relative;  
+        }
+        #storyFeed{
+            width: 100%; 
+            height: 100%; 
+            position: absolute;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            display: none;
+        } 
+        .instafeed{
+            width: 100%; 
+            height: 100%; 
+            border-radius: 10px;
+            cursor: pointer;
+            background: #fff;
+            white-space: nowrap;
+            overflow-x: auto;
+        }
+        .instafeed::-webkit-scrollbar{
+            display: none;
+        }
+        .status{
+            display: inline-block;
+            margin: 1rem .3rem;
+            width: 50px;
+            height: 50px;
+            border: 1px solid red;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .status img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul>
+                <a href="FB-FEATURE.html">
+                    <li>FB-FEATURE</li>
+                </a>
+                <a href="INSTA-HEART.html">
+                    <li>INSTA-HEART</li>
+                </a>
+                <a href="MOUSE-CRSR.html">
+                    <li>MOUSE-CRSR</li>
+                </a>
+                <a href="M-IMG-Hover.html">
+                    <li>M-IMG-Hover</li>
+                </a>
+                <a href="INSTA_STORY.html">
+                    <li>INSTA_STORY</li>
+                </a>
+            </ul>
+        </nav>
+        <h1 id="tital">IMAGE HOVER EEFFECT</h1>
+        <div class="card">
+            <div class="display">
+                <div id="storyFeed"></div>
+                <div class="instafeed"></div>
+                <hr>
+            </div>
+        </div>
+    </main>
+    <script>
+        let arr = [
+            {dp:'https://i.pinimg.com/564x/19/a4/7f/19a47fb115b31fc452004cdcfb981030.jpg',status:'https://i.pinimg.com/564x/19/a4/7f/19a47fb115b31fc452004cdcfb981030.jpg'},
+            {dp:'https://c4.wallpaperflare.com/wallpaper/503/227/769/angela-white-model-women-smiling-wallpaper-preview.jpg',status:'https://c4.wallpaperflare.com/wallpaper/503/227/769/angela-white-model-women-smiling-wallpaper-preview.jpg'},
+            {dp:'https://media.gettyimages.com/id/1056633634/photo/dani-daniels-attends-dinner-with-dani-launch-party-at-the-mezzanine-on-november-2-2018-in-new.jpg?s=612x612&w=0&k=20&c=eviFJ9SFBlCb9H4TO3lZsUDKs2DLwvvtl8HJLHWeXS4=',status:'https://media.gettyimages.com/id/1056633634/photo/dani-daniels-attends-dinner-with-dani-launch-party-at-the-mezzanine-on-november-2-2018-in-new.jpg?s=612x612&w=0&k=20&c=eviFJ9SFBlCb9H4TO3lZsUDKs2DLwvvtl8HJLHWeXS4='},
+            {dp:'https://c4.wallpaperflare.com/wallpaper/369/828/864/cathy-heaven-pornstar-glasses-big-boobs-brazzers-hd-wallpaper-preview.jpg',status:'https://c4.wallpaperflare.com/wallpaper/369/828/864/cathy-heaven-pornstar-glasses-big-boobs-brazzers-hd-wallpaper-preview.jpg'},
+            {dp:'https://krasavica.info/uploads/posts/2019-12/thumbs/1576186260_seksi-gia-paige-11.jpg',status:'https://krasavica.info/uploads/posts/2019-12/thumbs/1576186260_seksi-gia-paige-11.jpg'},
+            {dp:'https://i0.wp.com/globalzonetoday.com/wp-content/uploads/2020/08/Natalia-Starr.jpg?w=854&ssl=1',status:'https://i0.wp.com/globalzonetoday.com/wp-content/uploads/2020/08/Natalia-Starr.jpg?w=854&ssl=1'},
+        ]
+        let cluttur ='';
+        const story = document.querySelector('.instafeed');
+        arr.forEach(function(element,idx){
+            cluttur += `<div class="status"><img id="${idx}" src=${element.dp} alt=""></div>`; 
+        });
+        story.innerHTML = cluttur;
+        story.addEventListener('click',(dets) => {
+            document.querySelector('#storyFeed').style.display = 'block';
+            document.querySelector('#storyFeed').style.backgroundImage = `url(${arr[dets.target.id].status})`;
+        })
+        setInterval(() => {
+            document.querySelector('#storyFeed').style.display = 'none';
+           
+        }, 5000);
+    </script>
+</body>
+</html>

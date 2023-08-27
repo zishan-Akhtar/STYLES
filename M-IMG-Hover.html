@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+        }
+        main{
+            position: relative;
+        }
+
+        body {
+            overflow-x: hidden;
+            background-color: black;
+        }
+
+        ul {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            padding: 1rem;
+        }
+
+        li {
+            color: white;
+        }
+
+        #tital {
+            text-align: center;
+            border-bottom: 2px solid white;
+            border-top: 2px solid white;
+            margin: 1rem;
+            color: white;
+        }
+    </style>
+    <title>DOM Projects</title>
+    <style>
+        .card{
+            color: white;
+            font-family:'Courier New', Courier, monospace;
+        }   
+        .elem h1{
+            font-size: 7em;
+            mix-blend-mode: difference;
+        }
+        .last{
+            border-bottom: 1px solid white;
+        }
+        .elem{
+            border-top: 1px solid white;
+            position: relative;
+            cursor: pointer;
+        }
+        .elem img{
+            width: 30rem;
+            height: 30rem;z-index: -1;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: all linear 0.3s;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <nav>
+            <ul>
+                <a href="FB-FEATURE.html">
+                    <li>FB-FEATURE</li>
+                </a>
+                <a href="INSTA-HEART.html">
+                    <li>INSTA-HEART</li>
+                </a>
+                <a href="MOUSE-CRSR.html">
+                    <li>MOUSE-CRSR</li>
+                </a>
+                <a href="M-IMG-Hover.html">
+                    <li>M-IMG-Hover</li>
+                </a>
+                <a href="INSTA_STORY.html">
+                    <li>INSTA_STORY</li>
+                </a>
+            </ul>
+        </nav>
+        <h1 id="tital">IMAGE HOVER EEFFECT</h1>
+
+        <div class="card">
+             <div class="elem ">
+                <h1>Mia Malkova</h1>
+                <img src="https://c4.wallpaperflare.com/wallpaper/946/190/354/mia-malkova-portrait-women-hd-wallpaper-preview.jpg">
+            </div>
+            <div class="elem">
+                <h1>Valentina Nappi</h1>
+                <img src="https://c4.wallpaperflare.com/wallpaper/283/427/643/valentina-nappi-model-women-women-with-glasses-wallpaper-preview.jpg">
+            </div>
+            <div class="elem">
+                <h1>Lana Rhoades</h1>
+                <img src="https://c4.wallpaperflare.com/wallpaper/244/899/830/lana-rhoades-model-women-blue-eyes-wallpaper-preview.jpg">
+            </div>
+            <div class="elem">
+                <h1>Lovely Ghosh</h1>
+                <img src="https://www.suddenviral.com/wp-content/uploads/2022/11/Call-Me-Sherni-photo-819x1024.jpg">
+            </div>
+            <div class="elem last">
+                <h1>Kendra Lust</h1>
+                <img src="https://c4.wallpaperflare.com/wallpaper/375/864/894/kendra-lust-minidress-women-pornstar-wallpaper-preview.jpg">
+            </div>
+        </div>
+    </main>
+    <script>
+        //when i hover the line 1 it will only show  image of line one and when i go to line 2 it will hide line image and show line 2 image and so on 
+        function mouseImageHover() {
+            let elem = document.querySelectorAll('.elem');
+        let hImage = document.querySelectorAll('.elem img');
+        elem.forEach(element => {
+            console.log(element.childNodes[3]);
+            element.addEventListener('mouseenter',()=>{
+                element.childNodes[3].style.opacity = 1;
+            });
+            element.addEventListener('mouseleave',()=>{
+                element.childNodes[3].style.opacity = 0;
+            });
+            element.addEventListener('mousemove',function(dets) {
+                element.childNodes[3].style.left = dets.x + 'px';
+                element.childNodes[3].style.top = dets.y + 'px';  
+            })
+    });
+        }
+        mouseImageHover();
+    
+       
+    </script>
+</body>
+</html>

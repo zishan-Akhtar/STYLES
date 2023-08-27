@@ -1,0 +1,6 @@
+Complete the Dom practice project that shreyans yt channel with there are five projects and there names are :-
+1. Facebook friend request accept and remove ✅
+2. Instagram love button.✅
+3. custom curser.✅
+4. multiple image hovering effect.✅
+5. Instagram reels opening and closing.✅

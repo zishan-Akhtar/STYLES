@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: Monospace;
+            
+        }
+        body {
+            overflow: hidden;
+            background-color: black;
+        }
+        ul {
+            font-size:1.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            padding: 1rem;
+        }
+        li{
+            color: white;
+        }
+        #tital {
+            text-align: center;
+            border-bottom: 2px solid white;
+            border-top: 2px solid white;
+            margin: 1rem;
+            color: white;
+        }
+    </style>
+
+    <title>DOM Projects</title>
+    <style>
+        .card{
+            width: 100vw;
+            height: 100vh;
+            background-color: #19d47a;
+            display: flex;
+            justify-content: center;
+        }
+        .post{
+            width: 300px;
+            height: 400px;
+            background: #fff;
+            margin-top: 10rem;
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .post img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: bottom;
+        }
+        .post i{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(1);
+            color: white;
+            font-size:4.5rem;
+            opacity: .8;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   <main>
+    <nav>
+        <ul>
+            <a href="FB-FEATURE.html">
+                <li>FB-FEATURE</li>
+            </a>
+            <a href="INSTA-HEART.html">
+                <li>INSTA-HEART</li>
+            </a>
+            <a href="MOUSE-CRSR.html">
+                <li>MOUSE-CRSR</li>
+            </a>
+            <a href="M-IMG-Hover.html">
+                <li>M-IMG-Hover</li>
+            </a>
+            <a href="INSTA_STORY.html">
+                <li>INSTA_STORY</li>
+            </a>
+        </ul>
+    </nav>
+    <h1 id="tital">DOUBLE TAP HEART SIGN</h1>
+    <div class="card">
+        <div class="post">
+           <img src="https://c4.wallpaperflare.com/wallpaper/131/283/684/emily-willis-women-pornstar-outdoors-latinas-hd-wallpaper-preview.jpg" alt="">
+        <i class="ri-heart-3-fill"></i>
+        </div>
+    </div>
+   </main>
+   <script>
+    //when I double double click on image it shows heart and after 3 secong it will disapear again.
+    let img = document.querySelector('img');
+    let icon = document.querySelector('i');
+    img.addEventListener('dblclick',function(){
+        icon.style.display = 'block';
+        setInterval(() => {
+            icon.style.display = 'none';
+        }, 3000);
+    });
+   </script>
+</body>
+</html>

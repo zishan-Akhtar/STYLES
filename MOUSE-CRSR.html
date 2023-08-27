@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: Monospace;
+
+        }
+        main{
+            position: relative;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: black;
+        }
+
+        ul {
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;
+            padding: 1rem;
+        }
+
+        li {
+            color: white;
+        }
+
+        #tital {
+            text-align: center;
+            border-bottom: 2px solid white;
+            border-top: 2px solid white;
+            margin: 1rem;
+            color: white;
+        }
+    </style>
+    <title>DOM Projects</title>
+    <style>
+        .card {
+            width: 100%;
+            height: 100%;
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .card h1 {
+            margin-block: 1.8em;
+            font-size: 18vh;
+            font-weight: 600;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            cursor: pointer;
+        }
+        .follower{
+            width: 5rem;
+            height: 5rem;
+            background: wheat;
+            mix-blend-mode: difference;
+            border-radius: 50%;
+            position: absolute;
+            transform: translate(-50%,-50%) ;
+            transition: all linear 0.3s   ;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <nav>
+            <ul>
+                <a href="FB-FEATURE.html">
+                    <li>FB-FEATURE</li>
+                </a>
+                <a href="INSTA-HEART.html">
+                    <li>INSTA-HEART</li>
+                </a>
+                <a href="MOUSE-CRSR.html">
+                    <li>MOUSE-CRSR</li>
+                </a>
+                <a href="M-IMG-Hover.html">
+                    <li>M-IMG-Hover</li>
+                </a>
+                <a href="INSTA_STORY.html">
+                    <li>INSTA_STORY</li>
+                </a>
+            </ul>
+        </nav>
+        <h1 id="tital">MOUSE FOLOWER</h1>
+        <div class="card">
+            <h1>ZISHAN AKHTAR</h1>
+            <div class="follower"></div>
+        </div>
+    </main>
+    <script>
+        //when i hover in card div i want to follower-div to follow mouse.
+        function mouseFollower() {
+            let main = document.querySelector('.card');
+        let follower = document.querySelector('.follower');
+        main.addEventListener('mousemove',function (dets) {
+            follower.style.top = dets.y+"px";
+            follower.style.left = dets.x+"px";
+            
+        });
+        };
+        mouseFollower();
+
+    </script>
+</body>
+
+</html>
